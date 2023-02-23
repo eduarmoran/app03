@@ -5,7 +5,7 @@ pipeline {
     }
 
     stages {
-        stage('Hello') {
+        stage('test01') {
             steps {
                 echo 'Hello World'
             }
@@ -21,7 +21,7 @@ pipeline {
             }
         }
       
-        
+       
     stage('SAST'){
             steps {
                  sh 'env | grep -E "JENKINS_HOME|BUILD_ID|GIT_BRANCH|GIT_COMMIT" > /tmp/env'
@@ -29,7 +29,7 @@ pipeline {
                  sh 'docker run --rm --env-file /tmp/env --mount type=bind,source=$PWD,target=/scan registry.fortidevsec.forticloud.com/fdevsec_sast:latest'
             }
         }
-                
+             
 
     stage('Push') {
             steps {
@@ -48,8 +48,7 @@ pipeline {
             }
         }             
         
-        /*
-        stage('DAST'){
+        stage('FDEVSEC-DAST'){
             steps {
                  sh 'sleep 1m'
                  sh 'env | grep -E "JENKINS_HOME|BUILD_ID|GIT_BRANCH|GIT_COMMIT" > /tmp/env'
@@ -57,7 +56,6 @@ pipeline {
                  sh 'docker run --rm --env-file /tmp/env --mount type=bind,source=$PWD,target=/scan registry.fortidevsec.forticloud.com/fdevsec_dast:latest'                 
             }
         }
-        */
         
     }
 }
