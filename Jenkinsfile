@@ -48,7 +48,7 @@ pipeline {
             }
         }             
         
-        /*
+        
         stage('FDEVSEC-DAST'){
             steps {
                  sh 'sleep 1m'
@@ -58,7 +58,7 @@ pipeline {
             }
         }
 
-    */
+    
         
     }
 }
