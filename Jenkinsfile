@@ -16,7 +16,7 @@ pipeline {
             steps { 
                 script{
                  /*sh 'docker build -t test01 .'*/
-                 app = docker.build("test01")
+                 app = docker.build("app02-fdevsec")
                 }
             }
         }
