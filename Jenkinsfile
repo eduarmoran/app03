@@ -47,7 +47,8 @@ pipeline {
                  sh 'kubectl apply -f deployment.yml'
             }
         }             
-        \*
+        
+        /*
         stage('FDEVSEC-DAST'){
             steps {
                  sh 'sleep 1m'
