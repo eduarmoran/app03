@@ -25,5 +25,5 @@ spec:
     app: app02-fdevsec
   ports:
   - name: http
-    port: 5006
+    port: 5003
     targetPort: 3001
